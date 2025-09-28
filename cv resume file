@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jay Young - CV</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- === HEADER === -->
+  <header>
+    <section>
+      <div class="image-container">
+        <img src="https://via.placeholder.com/200" alt="Jay Young">
+      </div>
+      <div class="name-container">
+        <h1>Jay Young</h1>
+        <h2>Driver Training Coordinator</h2>
+      </div>
+      <div class="information-container">
+        <h3>📍 Location: United States</h3>
+        <h3>🎓 Education: Associate's Degree in Marketing</h3>
+      </div>
+    </section>
+  </header>
+
+  <!-- === MAIN === -->
+  <main>
+
+    <section>
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Driver Training Coordinator</strong> - 7+ years of experience coordinating and delivering safety-focused commercial and industrial driving programs.</li>
+        <li>Skilled in developing curriculum, scheduling classes, and mentoring new drivers.</li>
+        <li>Worked with logistics and fleet companies to ensure DOT compliance and best practices in road safety.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Driver Safety Training & Compliance</li>
+        <li>Curriculum Development</li>
+        <li>Classroom & Field Instruction</li>
+        <li>Team Leadership & Coordination</li>
+        <li>Fleet Operations Knowledge</li>
+        <li>Basic Marketing & Communication</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>Commercial Driver’s License (CDL)</li>
+        <li>DOT Safety Compliance Certification</li>
+        <li>First Aid & CPR Certified</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>Associate's Degree in Marketing</strong><br>Midwest Community College</p>
+    </section>
+
+  </main>
+
+  <!-- === FOOTER === -->
+  <footer>
+    <section>
+      <p>Made with 💻 by Jay Young — Open to new opportunities</p>
+    </section>
+  </footer>
+
+</body>
+</html>
