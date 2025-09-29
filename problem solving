@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Problem Solving - FizzBuzz & Letter Count</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 8px;
+      width: 200px;
+      margin-right: 10px;
+    }
+
+    pre {
+      background-color: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Problem Solving - Practice</h1>
+
+  <!-- FizzBuzz Section -->
+  <section>
+    <h2>FizzBuzz 🧠</h2>
+    <p>Enter a number (1 - 99):</p>
+    <input type="number" id="fizz-input" min="1" max="99">
+    <button onclick="runFizzBuzz()">Run FizzBuzz</button>
+    <pre id="fizz-output"></pre>
+  </section>
+
+  <!-- Letter Count Section -->
+  <section>
+    <h2>Letter Count 🔤</h2>
+    <p>Enter a word (only letters):</p>
+    <input type="text" id="letter-input">
+    <button onclick="runLetterCount()">Count Letters</button>
+    <pre id="letter-output"></pre>
+  </section>
+
+  <script>
+    // --- FizzBuzz Function ---
+    function fizzBuzz(n) {
+      const output = [];
+
+      if (!Number.isInteger(n) || n < 1 || n >= 100) {
+        output.push("Error");
+        return output;
+      }
+
+      for (let i = 1; i <= n; i++) {
+        const divisibleBy3 = i % 3 === 0;
+        const divisibleBy5 = i % 5 === 0;
+
+        if (divisibleBy3 && divisibleBy5) {
+          output.push("FizzBuzz");
+        } else if (divisibleBy3) {
+          output.push("Fizz");
+        } else if (divisibleBy5) {
+          output.push("Buzz");
+        } else {
+          output.push(i);
+        }
+      }
+
+      return output;
+    }
+
+    // --- Run FizzBuzz from Input ---
+    function runFizzBuzz() {
+      const input = document.getElementById("fizz-input").value;
+      const n = parseInt(input, 10);
+      const result = fizzBuzz(n);
+      document.getElementById("fizz-output").textContent = result.join("\n");
+    }
+
+    // --- Letter Count Function ---
+    function letterCount(word) {
+      const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+      if (typeof word !== "string") {
+        return "Error";
+      }
+
+      for (const letter of word) {
+        if (!alphabet.includes(letter.toLowerCase())) {
+          return "Error";
+        }
+      }
+
+      const counts = {};
+
+      for (const letter of word) {
+        const lower = letter.toLowerCase();
+        counts[lower] = (counts[lower] || 0) + 1;
+      }
+
+      // Return formatted result
+      return Object.entries(counts)
+        .map(([char, count]) => `${char}: ${count}`)
+        .join(", ");
+    }
+
+    // --- Run Letter Count from Input ---
+    function runLetterCount() {
+      const word = document.getElementById("letter-input").value;
+      const result = letterCount(word);
+      document.getElementById("letter-output").textContent = result;
+    }
+
+    // --- Console Tests ---
+    console.log("Testing FizzBuzz:");
+    fizzBuzz(0);         // Error
+    fizzBuzz(100);       // Error
+    fizzBuzz(16).forEach(console.log); // Valid Output
+
+    console.log("\nTesting Letter Count:");
+    console.log(letterCount("Caesar42")); // Error
+    console.log(letterCount("Caesar"));   // c:1, a:2, e:1, s:1, r:1
+    console.log(letterCount("AAbaBa"));   // a:4, b:2
+  </script>
+</body>
+</html>
